@@ -456,6 +456,10 @@ class VMobject(Mobject):
         """
         添加一条三阶贝塞尔曲线（可能不准）
         """
+        """
+        这里将第一个anchor省略了
+        默认为当前曲线的最后一个点
+        """
         self.throw_error_if_no_points()
         quadratic_approx = get_quadratic_approximation_of_cubic(
             self.get_last_point(), handle1, handle2, anchor
