@@ -538,6 +538,8 @@ class VMobject(Mobject):
         '''获取路径最后一个锚点'''
         return self.get_points()[-1]
 
+    # 需要掌握一些贝塞尔曲线的基本知识
+    # 计算handle
     def get_reflection_of_last_handle(self) -> np.ndarray:
         points = self.get_points()
         return 2 * points[-1] - points[-2]
