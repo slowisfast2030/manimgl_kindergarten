@@ -551,6 +551,9 @@ class VMobject(Mobject):
 
     def is_closed(self) -> bool:
         '''判断曲线是否闭合'''
+        # 这里就凸显了工程的特点了
+        # 第一个点和最后一个点的距离是否小于阈值
+        # 并不需要完全重合
         return self.consider_points_equals(
             self.get_points()[0], self.get_points()[-1]
         )
