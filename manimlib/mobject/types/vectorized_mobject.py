@@ -687,6 +687,7 @@ class VMobject(Mobject):
 
     # Information about the curve
     def get_bezier_tuples_from_points(self, points: Sequence[np.ndarray]):
+        # 给定的points数目可能不是3的倍数
         nppc = self.n_points_per_curve
         remainder = len(points) % nppc
         points = points[:len(points) - remainder]
