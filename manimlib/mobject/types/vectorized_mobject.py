@@ -426,8 +426,8 @@ class VMobject(Mobject):
 
     def start_new_path(self, point: np.ndarray):
         '''开启一个新的路径'''
-        assert(self.get_num_points() % self.n_points_per_curve == 0)
-        self.append_points([point])
+        assert(self.get_num_points() % self.n_points_per_curve == 0) # 保证锚点数量是nppc的整数倍，即3的倍数
+        self.append_points([point]) # 这里应该需要添加至少3个点吧？
         return self
 
     # 这是一个深入研究的函数

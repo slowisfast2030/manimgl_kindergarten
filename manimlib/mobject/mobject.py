@@ -284,7 +284,7 @@ class Mobject(object):
 
     def get_num_points(self) -> int:
         '''获取锚点数量'''
-        return len(self.data["points"])
+        return len(self.data["points"]) # 在这个版本的manimgl中，点数需要是3的倍数
 
     # 这个函数就可以看出submobjects属性和self.get_family()的区别了
     # submobjects属性只包含直接子物件，而get_family()还包含自身
