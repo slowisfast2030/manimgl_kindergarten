@@ -784,6 +784,10 @@ class VMobject(Mobject):
             for i in range(nppc)
         ]
 
+    # 麻了
+    # 难怪这份代码的注释一直称呼”锚点“
+    # 从这里的函数命名，可以发现
+    # 这个函数是想获取整条曲线的第一条贝塞尔曲线的点（两个锚点，一个控制点）
     def get_start_anchors(self) -> np.ndarray:
         return self.get_points()[0::self.n_points_per_curve]
 
