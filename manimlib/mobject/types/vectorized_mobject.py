@@ -431,7 +431,7 @@ class VMobject(Mobject):
         return self
 
     # 这是一个深入研究的函数
-    # 传入了贝塞尔曲线的anchor和handle
+    # 传入了三阶贝塞尔曲线的anchor和handle
     # 返回了曲线的points
     def add_cubic_bezier_curve(
         self,
@@ -440,6 +440,9 @@ class VMobject(Mobject):
         handle2: npt.ArrayLike,
         anchor2: npt.ArrayLike
     ):
+        """
+        三阶贝塞尔曲线需要两个anchor和两个handle
+        """
         new_points = get_quadratic_approximation_of_cubic(anchor1, handle1, handle2, anchor2)
         self.append_points(new_points)
 
