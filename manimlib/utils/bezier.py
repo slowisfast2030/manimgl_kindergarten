@@ -347,6 +347,8 @@ def get_quadratic_approximation_of_cubic(
     i0 = find_intersection(a0, T0, mid, Tm)
     i1 = find_intersection(a1, T1, mid, Tm)
 
+    # 仔细对比不同版本的manimgl，会发现这里可能是5 or 6
+    # 取决于是否存储mid点两次
     m, n = np.shape(a0)
     result = np.zeros((6 * m, n))
     result[0::6] = a0

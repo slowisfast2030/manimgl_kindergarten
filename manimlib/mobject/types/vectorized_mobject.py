@@ -443,6 +443,7 @@ class VMobject(Mobject):
         """
         三阶贝塞尔曲线需要两个anchor和两个handle
         """
+        # 这里做一个猜想，这里返回的new_points是6个点，即两条二阶贝塞尔曲线的锚点和手柄
         new_points = get_quadratic_approximation_of_cubic(anchor1, handle1, handle2, anchor2)
         self.append_points(new_points)
 
