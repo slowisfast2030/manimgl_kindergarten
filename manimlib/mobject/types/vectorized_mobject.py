@@ -544,6 +544,7 @@ class VMobject(Mobject):
         points = self.get_points()
         return 2 * points[-1] - points[-2]
 
+    # 这个函数的使用场景是什么？
     def close_path(self):
         '''用直线闭合该曲线'''
         if not self.is_closed():
