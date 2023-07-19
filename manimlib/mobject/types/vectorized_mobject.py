@@ -471,6 +471,7 @@ class VMobject(Mobject):
 
     def add_quadratic_bezier_curve_to(self, handle: np.ndarray, anchor: np.ndarray):
         '''添加一条二阶贝塞尔曲线'''
+        # 还是早期的manimgl版本容易理解
         self.throw_error_if_no_points()
         if self.has_new_path_started():
             self.append_points([handle, anchor])
@@ -479,7 +480,9 @@ class VMobject(Mobject):
 
     def add_line_to(self, point: np.ndarray):
         '''添加一条直线'''
+        # 添加一条直线，本质上在于添加一些点
         end = self.get_points()[-1]
+        # 在0和1之间等间隔插3个值，包含首尾
         alphas = np.linspace(0, 1, self.n_points_per_curve)
         if self.long_lines:
             halfway = interpolate(end, point, 0.5)
@@ -506,7 +509,11 @@ class VMobject(Mobject):
             self.add_line_to(point)
         else:
             self.throw_error_if_no_points()
-            new_handle = self.get_reflection_of_last_handle()
+            # 这里用二阶贝塞尔曲线来生成曲线
+            # 需要首先计算出handle
+            # 需要补充点贝塞尔曲线的数学知识
+            # 看代码实现，不难
+            new_handle = self.get_reflection_of_last_handle() 
             self.add_quadratic_bezier_curve_to(new_handle, point)
         return self
 
@@ -519,7 +526,7 @@ class VMobject(Mobject):
         self.add_cubic_bezier_curve_to(new_handle, handle, point)
 
     def has_new_path_started(self) -> bool:
-        return self.get_num_points() % self.n_points_per_curve == 1
+        return self.get_num_points() % self.n_points_per_curve == 1 # genius!!!!!
 
     def get_last_point(self) -> np.ndarray:
         '''获取路径最后一个锚点'''
