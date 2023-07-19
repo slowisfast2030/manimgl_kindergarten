@@ -581,6 +581,7 @@ class VMobject(Mobject):
             vmob.set_points(np.vstack(new_points))
         return self
 
+    # 不断的添加折线段
     def add_points_as_corners(self, points: Iterable[np.ndarray]):
         for point in points:
             self.add_line_to(point)
@@ -662,6 +663,8 @@ class VMobject(Mobject):
         self.change_anchor_mode("jagged")
         return self
 
+    # 这里传入的points就是二阶贝塞尔曲线的点了
+    # 需要判断点数是否是3的倍数
     def add_subpath(self, points: Iterable[np.ndarray]):
         assert(len(points) % self.n_points_per_curve == 0)
         self.append_points(points)
