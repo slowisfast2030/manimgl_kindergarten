@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 import re
 
-import manimpango
+import manimpango # type: ignore
 import pygments
 import pygments.formatters
 import pygments.lexers
