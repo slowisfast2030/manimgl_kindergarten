@@ -254,9 +254,9 @@ class Arc(TipableVMobject):
         samples[1::2] /= np.cos(theta / 2)
 
         points = np.zeros((3 * n_components, 3))
-        points[0::3] = samples[0:-1:2]
-        points[1::3] = samples[1::2]
-        points[2::3] = samples[2::2]
+        points[0::3] = samples[0:-1:2] # 第一个anchor
+        points[1::3] = samples[1::2]   # handle
+        points[2::3] = samples[2::2]   # 第二个anchor
         return points
 
     def get_arc_center(self) -> np.ndarray:
