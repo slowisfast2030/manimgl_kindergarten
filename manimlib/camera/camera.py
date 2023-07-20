@@ -477,7 +477,7 @@ class Camera(object):
         if render_group["single_use"]:
             self.release_render_group(render_group)
 
-    def get_render_group_list(self, mobject: Mobject) -> Iterable[dict[str]]:
+    def get_render_group_list(self, mobject: Mobject) -> Iterable[dict[str]]: # type: ignore
         if mobject.is_changing():
             return self.generate_render_group_list(mobject)
 
@@ -487,7 +487,7 @@ class Camera(object):
             self.mob_to_render_groups[key] = list(self.generate_render_group_list(mobject))
         return self.mob_to_render_groups[key]
 
-    def generate_render_group_list(self, mobject: Mobject) -> Iterable[dict[str]]:
+    def generate_render_group_list(self, mobject: Mobject) -> Iterable[dict[str]]: # type: ignore
         return (
             self.get_render_group(sw, single_use=mobject.is_changing())
             for sw in mobject.get_shader_wrapper_list()
