@@ -3,9 +3,9 @@ from __future__ import annotations
 import itertools as it
 import math
 
-import moderngl
+import moderngl # type: ignore
 import numpy as np
-import OpenGL.GL as gl
+import OpenGL.GL as gl # type: ignore
 from PIL import Image
 from scipy.spatial.transform import Rotation
 
