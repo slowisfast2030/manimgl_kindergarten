@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import moderngl
+import moderngl # type: ignore
 import numpy as np
 
 from manimlib.constants import GREY_C, YELLOW
