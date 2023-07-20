@@ -227,6 +227,8 @@ class Arc(TipableVMobject):
         self.angle = angle
         VMobject.__init__(self, **kwargs)
 
+    # 初始化Arc对象后，会调用init_points()方法
+    # 在Mobject代码中，init_points()方法被调用
     def init_points(self) -> None:
         self.set_points(Arc.create_quadratic_bezier_points(
             angle=self.angle,
@@ -309,10 +311,14 @@ class ArcBetweenPoints(Arc):
 
         其余关键字参数同 Arc
         '''
-        super().__init__(angle=angle, **kwargs)
+        """
+        真是优秀的解决方案！！！
+        genius!!!
+        """
+        super().__init__(angle=angle, **kwargs) # 圆弧的点已经被设置
         if angle == 0:
             self.set_points_as_corners([LEFT, RIGHT])
-        self.put_start_and_end_on(start, end)
+        self.put_start_and_end_on(start, end) # 调整起始点和终止点
 
 
 class CurvedArrow(ArcBetweenPoints):
