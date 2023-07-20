@@ -423,6 +423,7 @@ class Ellipse(Circle):
     def __init__(self, **kwargs):
         """宽度为 ``width``，高度为 ``height``"""
         super().__init__(**kwargs)
+        # 椭圆是这么来的？
         self.set_width(self.width, stretch=True)
         self.set_height(self.height, stretch=True)
 
@@ -981,6 +982,10 @@ class CubicBezier(VMobject):
     """三阶贝塞尔曲线
     
     `测试中发现这个三阶贝塞尔曲线不准`
+    """
+
+    """
+    tony crane为这个库花了多少时间啊
     """
     def __init__(
         self,
