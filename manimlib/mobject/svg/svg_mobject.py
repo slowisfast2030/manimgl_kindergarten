@@ -5,7 +5,7 @@ import os
 from xml.etree import ElementTree as ET
 
 import numpy as np
-import svgelements as se
+import svgelements as se # type: ignore
 
 from manimlib.constants import RIGHT
 from manimlib.logger import log
