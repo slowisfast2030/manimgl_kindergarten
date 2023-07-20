@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from isosurfaces import plot_isoline
+from isosurfaces import plot_isoline # type: ignore
 import numpy as np
 
 from manimlib.constants import FRAME_X_RADIUS, FRAME_Y_RADIUS
