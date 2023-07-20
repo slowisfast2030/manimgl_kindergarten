@@ -263,16 +263,22 @@ class Arc(TipableVMobject):
         """
         获取圆弧圆心
         """
+        """
+        数学思想很简单，圆弧上的两点的法线的交点
+        """
         # First two anchors and handles
         a1, h, a2 = self.get_points()[:3]
         # Tangent vectors
-        t1 = h - a1
-        t2 = h - a2
+        t1 = h - a1 # t1方向是a1处的切线
+        t2 = h - a2 # t2方向是a2处的切线
         # Normals
-        n1 = rotate_vector(t1, TAU / 4)
-        n2 = rotate_vector(t2, TAU / 4)
-        return find_intersection(a1, n1, a2, n2)
+        n1 = rotate_vector(t1, TAU / 4) # 旋转90度
+        n2 = rotate_vector(t2, TAU / 4) # 旋转90度
+        return find_intersection(a1, n1, a2, n2) # 获取交点
 
+    # 任何一段圆弧都有起始点和终止点
+    # 起始点或终止点减去圆心，就得到一条向量
+    # 这条向量的角度就是圆弧的起始角或终止角
     def get_start_angle(self) -> float:
         '''获取起始角度'''
         angle = angle_of_vector(self.get_start() - self.get_arc_center())
