@@ -52,6 +52,7 @@ class ParametricCurve(VMobject):
         '''获取 t 值对应的点坐标'''
         return self.t_func(t)
 
+    # 终于明白是如何在坐标轴上绘图了
     def init_points(self):
         t_min, t_max, step = self.t_range
 
