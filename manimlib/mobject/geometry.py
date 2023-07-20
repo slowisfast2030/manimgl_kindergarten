@@ -1009,7 +1009,7 @@ class Polygon(VMobject):
 
     def init_points(self) -> None:
         verts = self.vertices
-        self.set_points_as_corners([*verts, verts[0]])
+        self.set_points_as_corners([*verts, verts[0]]) # genius
 
     def get_vertices(self) -> list[np.ndarray]:
         """获取所有顶点"""
