@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import numpy as np
-from pyglet.window import key as PygletWindowKeys
+from pyglet.window import key as PygletWindowKeys # type: ignore
 
 from manimlib.constants import FRAME_HEIGHT, FRAME_WIDTH
 from manimlib.constants import DOWN, LEFT, ORIGIN, RIGHT, UP
