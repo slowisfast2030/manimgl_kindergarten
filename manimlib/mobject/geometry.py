@@ -51,6 +51,12 @@ class TipableVMobject(VMobject):
     - ``tip_config`` 字典中传入与箭头相关的参数，最终会将这个字典中的参数传入 ``ArrowTip`` 类来生成箭头。
       这一部分将在 ``ArrowTip`` 中详细阐述。
     """
+
+    """
+    这个类和VMobject的作用差不多，是方便继承
+    self.add()并不会显示
+    因为没有初始化点
+    """
     CONFIG = {
         "tip_config": {
             "fill_opacity": 1,
