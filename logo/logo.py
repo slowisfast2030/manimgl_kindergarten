@@ -1,4 +1,7 @@
-from manimlib.imports import *
+#from manimlib.imports import * 
+# 换成下面的导入
+from manimlib import *
+from manimlib.once_useful_constructs.graph_scene import GraphScene
 
 NEW_BLUE = "#68a8e1"
 
