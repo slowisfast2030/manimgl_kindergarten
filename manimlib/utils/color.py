@@ -121,7 +121,7 @@ def get_colormap_list(
     twilight_shifted
     turbo
     """
-    from matplotlib.cm import get_cmap
+    from matplotlib.cm import get_cmap # type: ignore
 
     if map_name == "3b1b_colormap":
         rgbs = [color_to_rgb(color) for color in COLORMAP_3B1B]

@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 
 import numpy as np
-import validators
+import validators # type: ignore
 
 from typing import TYPE_CHECKING
 

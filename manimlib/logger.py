@@ -1,6 +1,6 @@
 import logging
 
-from rich.logging import RichHandler
+from rich.logging import RichHandler # type: ignore
 
 __all__ = ["log"]
 

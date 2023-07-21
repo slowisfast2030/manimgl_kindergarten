@@ -3,14 +3,14 @@ from __future__ import annotations
 import importlib
 import inspect
 import os
-import yaml
+import yaml # type: ignore
 
-from rich import box
-from rich.console import Console
-from rich.prompt import Confirm
-from rich.prompt import Prompt
-from rich.rule import Rule 
-from rich.table import Table
+from rich import box # type: ignore
+from rich.console import Console # type: ignore
+from rich.prompt import Confirm # type: ignore
+from rich.prompt import Prompt # type: ignore
+from rich.rule import Rule # type: ignore
+from rich.table import Table # type: ignore
 
 from typing import TYPE_CHECKING
 

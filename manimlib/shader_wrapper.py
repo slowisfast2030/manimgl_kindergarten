@@ -4,7 +4,7 @@ import copy
 import os
 import re
 
-import moderngl
+import moderngl # type: ignore
 import numpy as np
 
 from manimlib.utils.directories import get_shader_dir

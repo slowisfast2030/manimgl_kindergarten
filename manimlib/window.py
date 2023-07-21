@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import numpy as np
 
-import moderngl_window as mglw
-from moderngl_window.context.pyglet.window import Window as PygletWindow
-from moderngl_window.timers.clock import Timer
-from screeninfo import get_monitors
+import moderngl_window as mglw # type: ignore
+from moderngl_window.context.pyglet.window import Window as PygletWindow # type: ignore
+from moderngl_window.timers.clock import Timer # type: ignore
+from screeninfo import get_monitors # type: ignore
 
 from manimlib.utils.config_ops import digest_config
 from manimlib.utils.customization import get_customization
