@@ -16,6 +16,8 @@ from manimlib.constants import ORIGIN, RIGHT, UP
 from manimlib.constants import SMALL_BUFF
 from manimlib.constants import TAU
 from manimlib.constants import GREY, YELLOW
+from manimlib.constants import FRAME_X_RADIUS, FRAME_Y_RADIUS # 补充导入
+
 from manimlib.mobject.geometry import Circle
 from manimlib.mobject.geometry import Dot
 from manimlib.mobject.geometry import Line
