@@ -17,6 +17,10 @@ from manimlib.utils.space_ops import project_along_vector
 from manimlib.utils.space_ops import rotate_vector
 from manimlib.utils.space_ops import z_to_vector
 
+# 补充
+from manimlib.utils.space_ops import get_norm
+
+
 LIGHT_COLOR = YELLOW
 SHADOW_COLOR = BLACK
 SWITCH_ON_RUN_TIME = 1.5

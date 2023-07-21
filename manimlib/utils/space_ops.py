@@ -5,7 +5,7 @@ import math
 import operator as op
 import platform
 
-from mapbox_earcut import triangulate_float32 as earcut
+from mapbox_earcut import triangulate_float32 as earcut # type: ignore
 import numpy as np
 from scipy.spatial.transform import Rotation
 from tqdm import tqdm as ProgressDisplay
