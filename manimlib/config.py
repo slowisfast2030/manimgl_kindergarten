@@ -4,9 +4,9 @@ from contextlib import contextmanager
 import importlib
 import inspect
 import os
-from screeninfo import get_monitors
+from screeninfo import get_monitors # type: ignore
 import sys
-import yaml
+import yaml # type: ignore
 
 from manimlib.logger import log
 from manimlib.utils.config_ops import merge_dicts_recursively
