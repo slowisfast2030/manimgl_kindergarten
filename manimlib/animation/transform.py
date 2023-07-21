@@ -37,6 +37,11 @@ class Transform(Animation):
         "replace_mobject_with_target_in_scene": False,
     }
 
+    # 构造函数中需要两个参数
+    # mobject: 动画开始的状态
+    # target_mobject: 动画结束的状态
+    # 整个动画完成的是从 mobject 到 target_mobject 的变换
+    # 个人猜想：是不是操作points？
     def __init__(
         self,
         mobject: Mobject,
