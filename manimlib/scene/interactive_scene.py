@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import itertools as it
 import numpy as np
-import pyperclip
+import pyperclip # type: ignore
 
 from manimlib.animation.fading import FadeIn
 from manimlib.constants import ARROW_SYMBOLS, CTRL_SYMBOL, DELETE_SYMBOL, SHIFT_SYMBOL

@@ -7,6 +7,10 @@ from manimlib.animation.fading import FadeOut
 from manimlib.animation.growing import GrowArrow
 from manimlib.animation.transform import ApplyFunction
 from manimlib.animation.transform import ApplyPointwiseFunction
+from manimlib.animation.creation import DrawBorderThenFill # 补充
+from manimlib.mobject.mobject import Group # 补充
+
+
 from manimlib.animation.transform import Transform
 from manimlib.constants import BLACK, BLUE_D, GREEN_C, RED_C, GREY, WHITE, YELLOW
 from manimlib.constants import DL, DOWN, ORIGIN, RIGHT, UP
