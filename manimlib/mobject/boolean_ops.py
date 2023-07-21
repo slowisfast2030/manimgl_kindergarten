@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import numpy as np
-import pathops
+import pathops # type: ignore
 
 from manimlib.mobject.types.vectorized_mobject import VMobject
 
