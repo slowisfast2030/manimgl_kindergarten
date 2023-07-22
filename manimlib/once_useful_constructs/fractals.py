@@ -18,6 +18,8 @@ from manimlib.utils.space_ops import compass_directions
 from manimlib.utils.space_ops import rotate_vector
 from manimlib.utils.space_ops import rotation_matrix
 
+# 很多变量没有导入，暴力
+from manimlib import *
 
 def rotate(points, angle=np.pi, axis=OUT):
     if axis is None:
