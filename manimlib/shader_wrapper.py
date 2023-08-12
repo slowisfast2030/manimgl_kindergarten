@@ -97,16 +97,30 @@ class ShaderWrapper(object):
         ]))
 
     def refresh_id(self) -> None:
+        """
+        实在没看出来self.id有什么用
+
+        self.program_id是着色器代码的id
+        self.id可以理解为整个类的id
+        """
         self.program_id = self.create_program_id()
         self.id = self.create_id()
 
     def create_program_id(self) -> int:
+        """
+        创建program id有什么用处吗
+        """
         return hash("".join((
             self.program_code[f"{name}_shader"] or ""
             for name in ("vertex", "geometry", "fragment")
         )))
 
     def init_program_code(self) -> None:
+        """
+        构造函数中并没有直接显示有self.program_code属性
+        构造函数会执行这个函数
+        这个函数会给self.program_code赋值
+        """
         def get_code(name: str) -> str | None:
             return get_shader_code_from_file(
                 os.path.join(self.shader_folder, f"{name}.glsl")
