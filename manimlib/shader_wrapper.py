@@ -153,6 +153,12 @@ filename_to_code_map: dict[str, str] = {}
 
 
 def get_shader_code_from_file(filename: str) -> str | None:
+    """
+    filename: inserts/finalize_color.glsl
+
+    因为*.glsl文件中会调用其他glsl文件的函数
+    这些被调用的函数统一放到了insert文件夹
+    """
     if not filename:
         return None
     if filename in filename_to_code_map:
