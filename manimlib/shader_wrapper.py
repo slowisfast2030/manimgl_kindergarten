@@ -74,6 +74,11 @@ class ShaderWrapper(object):
         return result
 
     def is_valid(self) -> bool:
+        """
+        The all() function in Python is a built-in function that takes 
+        an iterable as an argument and returns True if all the elements 
+        in the iterable are truthy, otherwise it returns False.
+        """
         return all([
             self.vert_data is not None,
             self.program_code["vertex_shader"] is not None,
