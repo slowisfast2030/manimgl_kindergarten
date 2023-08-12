@@ -150,6 +150,9 @@ class ShaderWrapper(object):
 
     def combine_with(self, *shader_wrappers: ShaderWrapper):
         # Assume they are of the same type
+        """
+        合并多个ShaderWrapper
+        """
         if len(shader_wrappers) == 0:
             return
         if self.vert_indices is not None:
