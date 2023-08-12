@@ -47,6 +47,10 @@ class ShaderWrapper(object):
         self.refresh_id()
 
     def __eq__(self, shader_wrapper: ShaderWrapper):
+        """
+        The eq function in Python is a special method that allows you to 
+        define how two objects of a custom class are compared using the == operator. 
+        """
         return all((
             np.all(self.vert_data == shader_wrapper.vert_data),
             np.all(self.vert_indices == shader_wrapper.vert_indices),
