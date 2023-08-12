@@ -24,6 +24,11 @@ if TYPE_CHECKING:
 
 
 class ShaderWrapper(object):
+    """
+    看完整个类的源码，感觉最有用的就是
+    self.program_code属性
+    是一个字典，包含三大着色器源码
+    """
     def __init__(
         self,
         vert_data: np.ndarray | None = None,

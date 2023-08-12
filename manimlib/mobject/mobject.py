@@ -1946,6 +1946,9 @@ class Mobject(object):
 
     def get_shader_wrapper(self):
         '''获取 shader 包装'''
+        """
+        很别扭的一个函数，感觉更像是set而不是get
+        """
         self.shader_wrapper.vert_data = self.get_shader_data()
         self.shader_wrapper.vert_indices = self.get_shader_vert_indices()
         self.shader_wrapper.uniforms = self.get_shader_uniforms()
