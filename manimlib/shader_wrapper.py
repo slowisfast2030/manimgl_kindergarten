@@ -35,6 +35,7 @@ class ShaderWrapper(object):
         render_primitive: int = moderngl.TRIANGLE_STRIP,
     ):
         self.vert_data = vert_data
+        # 这个属性是啥意思？
         self.vert_indices = vert_indices
         self.vert_attributes = vert_data.dtype.names
         self.shader_folder = shader_folder
