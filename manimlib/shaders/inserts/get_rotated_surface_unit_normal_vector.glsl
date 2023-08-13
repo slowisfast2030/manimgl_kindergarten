@@ -2,6 +2,12 @@
 // uniform vec3 camera_offset;
 // uniform mat3 camera_rotation;
 
+/*
+从函数的实现来看，du_point和dv_point是在世界坐标系下的点
+且和point距离很近
+
+类似于求曲线在point的切线，需要在point附近再取一个点
+*/
 vec3 get_rotated_surface_unit_normal_vector(vec3 point, vec3 du_point, vec3 dv_point){
     vec3 cp = cross(
         (du_point - point),
