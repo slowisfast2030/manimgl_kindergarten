@@ -53,12 +53,15 @@ void emit_vertex_wrapper(vec3 point, int index){
         gloss,
         shadow
     );
+    // 3b1b好像默认xyz_coords是相机空间
     xyz_coords = point;
+    // 映射到裁剪空间
     gl_Position = get_gl_Position(xyz_coords);
     EmitVertex();
 }
 
 
+// 需要注意，这里的bp已经转到了相机坐标系
 void emit_simple_triangle(){
     for(int i = 0; i < 3; i++){
         emit_vertex_wrapper(bp[i], i);
@@ -118,13 +121,16 @@ void emit_pentagon(vec3[3] points, vec3 normal){
 void main(){
     // If vert indices are sequential, don't fill all
     /*
-    
+    这里需要特别注意，传入几何着色器的是图元
+    图元的顶点索引若是连续，则是弧形
+    不连续，则是三角形
     */
     fill_all = float(
         (v_vert_index[1] - v_vert_index[0]) != 1.0 ||
         (v_vert_index[2] - v_vert_index[1]) != 1.0
     );
 
+    // 图元顶点索引不连续
     if(fill_all == 1.0){
         emit_simple_triangle();
         return;
