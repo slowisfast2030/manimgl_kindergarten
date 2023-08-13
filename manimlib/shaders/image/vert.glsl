@@ -22,9 +22,8 @@ in vec2 im_coords;
 in float opacity;
 
 /*
-这里的两个out变量是顶点的属性
-传入fragment shader后
-会被插值
+v_im_coords和v_opacity是可变类型的。
+它们是顶点着色器的输出变量，在传递到片段着色器之前会被插值。
 */
 out vec2 v_im_coords;
 out float v_opacity;
