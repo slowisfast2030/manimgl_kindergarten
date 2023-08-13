@@ -1,5 +1,18 @@
 #version 330
 
+/*
+uniform vec2 frame_shape;
+uniform float anti_alias_width;
+uniform vec3 camera_offset;
+uniform mat3 camera_rotation;
+uniform float is_fixed_in_frame;
+uniform float focal_distance;
+
+这些uniform变量会在
+get_gl_Position
+position_point_into_frame
+函数中使用
+*/
 #INSERT camera_uniform_declarations.glsl
 
 uniform sampler2D Texture;
