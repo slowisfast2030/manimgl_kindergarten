@@ -24,6 +24,8 @@ in float opacity;
 /*
 v_im_coords和v_opacity是可变类型的。
 它们是顶点着色器的输出变量，在传递到片段着色器之前会被插值。
+
+在顶点着色器中，输出变量默认是可变的，因此不需要显式声明。
 */
 out vec2 v_im_coords;
 out float v_opacity;
