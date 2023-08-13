@@ -1,3 +1,4 @@
+// 根据平面上的三个点，计算法向量
 vec3 get_unit_normal(in vec3[3] points){
     float tol = 1e-6;
     vec3 v1 = normalize(points[1] - points[0]);
