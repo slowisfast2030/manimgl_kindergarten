@@ -117,6 +117,9 @@ void emit_pentagon(vec3[3] points, vec3 normal){
 
 void main(){
     // If vert indices are sequential, don't fill all
+    /*
+    
+    */
     fill_all = float(
         (v_vert_index[1] - v_vert_index[0]) != 1.0 ||
         (v_vert_index[2] - v_vert_index[1]) != 1.0
