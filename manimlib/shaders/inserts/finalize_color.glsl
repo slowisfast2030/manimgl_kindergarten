@@ -9,6 +9,7 @@ vec3 float_to_color(float value, float min_val, float max_val, vec3[9] colormap_
 }
 
 
+// 这里查看虎书，补充光照的知识
 vec4 add_light(vec4 color,
                vec3 point,
                vec3 unit_normal,
