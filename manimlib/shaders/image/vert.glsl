@@ -43,5 +43,9 @@ position_point_into_frame函数将点从世界空间转换为相机空间。
 void main(){
     v_im_coords = im_coords;
     v_opacity = opacity;
+    /*
+    gl_Position in the vertex shader is typically expected to be in clip space, 
+    which ranges from -1 to 1 in all three dimensions.
+    */
     gl_Position = get_gl_Position(position_point_into_frame(point));
 }
