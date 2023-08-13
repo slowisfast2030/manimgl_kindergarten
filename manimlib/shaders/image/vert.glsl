@@ -1,12 +1,12 @@
 #version 330
 
 /*
-uniform vec2 frame_shape;
-uniform float anti_alias_width;
-uniform vec3 camera_offset;
-uniform mat3 camera_rotation;
-uniform float is_fixed_in_frame;
-uniform float focal_distance;
+uniform vec2 frame_shape;        // 帧大小
+uniform float anti_alias_width;  // 抗锯齿宽度
+uniform vec3 camera_offset;      // 相机偏移量
+uniform mat3 camera_rotation;    // 相机旋转矩阵
+uniform float is_fixed_in_frame; // 是否固定在场景中
+uniform float focal_distance;    // 焦距
 
 cam_coords = vec3(0, 0, focal_distance);
 在相机坐标系中，相机的坐标
