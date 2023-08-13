@@ -8,6 +8,9 @@ uniform mat3 camera_rotation;
 uniform float is_fixed_in_frame;
 uniform float focal_distance;
 
+cam_coords = vec3(0, 0, focal_distance);
+在相机坐标系中，相机的坐标
+
 这些uniform变量会在
 get_gl_Position
 position_point_into_frame
