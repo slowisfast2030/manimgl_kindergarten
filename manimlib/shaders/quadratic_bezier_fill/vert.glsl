@@ -8,7 +8,7 @@ in vec4 color;       // 顶点颜色
 in float vert_index; // 顶点索引
 
 out vec3 bp;                    // Bezier control point
-out vec3 v_global_unit_normal;  // 传给 geom 单位法向量
+out vec3 v_global_unit_normal;  // 传给 geom 单位法向量（好奇：为何取名global）
 out vec4 v_color;               // 传给 geom 顶点颜色
 out float v_vert_index;         // 传给 geom 顶点索引
 

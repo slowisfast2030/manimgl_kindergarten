@@ -3,7 +3,7 @@
 layout (triangles) in; // 输入图元
 layout (triangle_strip, max_vertices = 5) out; // 输出图元
 
-uniform float anti_alias_width;
+uniform float anti_alias_width; // 抗锯齿宽度
 
 // Needed for get_gl_Position
 uniform vec2 frame_shape;
@@ -16,18 +16,20 @@ uniform float reflectiveness;
 uniform float gloss;
 uniform float shadow;
 
-in vec3 bp[3];
-in vec3 v_global_unit_normal[3];
-in vec4 v_color[3];
-in float v_vert_index[3];
+in vec3 bp[3]; // 贝塞尔控制点
+in vec3 v_global_unit_normal[3]; // 单位法向量
+in vec4 v_color[3]; // 颜色
+in float v_vert_index[3]; // 顶点索引
 
 out vec4 color;
-out float fill_all;
-out float uv_anti_alias_width;
+out float fill_all; // 是否填充
+out float uv_anti_alias_width; // uv坐标下的抗锯齿宽度
 
 out vec3 xyz_coords;
 out float orientation;
+
 // uv space is where b0 = (0, 0), b1 = (1, 0), and transform is orthogonal
+// 特别解释了uv空间
 out vec2 uv_coords;
 out vec2 uv_b2;
 out float bezier_degree;
