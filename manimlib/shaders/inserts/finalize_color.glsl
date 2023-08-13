@@ -54,7 +54,6 @@ vec4 add_light(vec4 color,
 point,unit_normal,light_coords,cam_coords分别是在什么坐标系下的坐标？
 
 首先可以确定，point,unit_normal都是在相机坐标系下的坐标(看surface/frag.glsl中的代码)
-
 进一步通过查看add_light函数，发现light_coords,cam_coords也是在相机坐标系下的坐标
 vec3 to_camera = normalize(cam_coords - point);
 vec3 to_light = normalize(light_coords - point);
