@@ -21,6 +21,11 @@ in vec3 point;
 in vec2 im_coords;
 in float opacity;
 
+/*
+这里的两个out变量是顶点的属性
+传入fragment shader后
+会被插值
+*/
 out vec2 v_im_coords;
 out float v_opacity;
 
