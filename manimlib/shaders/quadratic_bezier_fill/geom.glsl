@@ -1,7 +1,7 @@
 #version 330
 
-layout (triangles) in;
-layout (triangle_strip, max_vertices = 5) out;
+layout (triangles) in; // 输入图元
+layout (triangle_strip, max_vertices = 5) out; // 输出图元
 
 uniform float anti_alias_width;
 
