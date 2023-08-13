@@ -24,3 +24,17 @@ void main(){
     v_color = color;
     v_vert_index = vert_index;
 }
+
+/*
+一个简单的思考：
+manim中默认的点是在世界坐标系中的
+在仅有vertex shader和fragment shader的情况下，我们可以
+在vertex shader中完成
+世界坐标系 ---> 相机坐标系 ---> 裁剪坐标系
+
+而在有vertex shader, geometry shader, fragment shader的情况下，我们可以
+在vertex shader中完成
+世界坐标系 ---> 相机坐标系
+在geometry shader中完成
+相机坐标系 ---> 裁剪坐标系
+*/
