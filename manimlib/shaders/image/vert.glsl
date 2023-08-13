@@ -15,6 +15,9 @@ out float v_opacity;
 #INSERT get_gl_Position.glsl
 #INSERT position_point_into_frame.glsl
 
+// 一个猜想：这里的point已经在world space
+// 通过position_point_into_frame把point转换到camera space
+// 通过get_gl_Position把camera space的point转换到clip space
 void main(){
     v_im_coords = im_coords;
     v_opacity = opacity;
