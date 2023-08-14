@@ -25,10 +25,9 @@ out float v_vert_index;         // 传给 geom 顶点索引
 #INSERT position_point_into_frame.glsl
 
 void main(){
-    /*
-    这里进一步验证了一个猜测: manim传入的顶点坐标原生就是在世界坐标系
-    */
+    // 将point转换到相机坐标系中
     bp = position_point_into_frame(point);
+    // 将unit_normal转换到相机坐标系中
     v_global_unit_normal = rotate_point_into_frame(unit_normal);
     v_color = color;
     v_vert_index = vert_index;
