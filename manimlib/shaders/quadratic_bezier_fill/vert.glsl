@@ -2,6 +2,12 @@
 
 #INSERT camera_uniform_declarations.glsl
 
+/*
+这里可以假设我们要绘制的是circle
+在manim中，circle是由8段贝塞尔曲线组成的
+每段贝塞尔曲线由3个控制点组成
+因此，我们需要24个控制点
+*/
 in vec3 point;       // 从 manim 传入的顶点坐标（默认世界坐标）
 in vec3 unit_normal; // 单位法向量（世界坐标）
 in vec4 color;       // 顶点颜色
