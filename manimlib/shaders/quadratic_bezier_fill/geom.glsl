@@ -135,7 +135,9 @@ void emit_pentagon(vec3[3] points, vec3 normal){
 
     for(int i = 0; i < 5; i++){
         vec3 corner = corners[i];
+        // 每一次循环都会对uv_coords进行赋值，意义何在？是为了得到p2在uv坐标系下的坐标?
         uv_coords = (xyz_to_uv * vec4(corner, 1)).xy;
+        // 赋予了新的顶点索引
         int j = int(sign(i - 1) + 1);  // Maps i = [0, 1, 2, 3, 4] onto j = [0, 0, 1, 2, 2]
         emit_vertex_wrapper(corner, j);
     }
