@@ -16,6 +16,11 @@ uniform float reflectiveness;
 uniform float gloss;
 uniform float shadow;
 
+/*
+After the vertex shader stage in graphics programming, 
+triangulation refers to the process of converting polygons 
+with more than three indices into triangles. 
+*/
 in vec3 bp[3]; // 贝塞尔控制点
 in vec3 v_global_unit_normal[3]; // 单位法向量
 in vec4 v_color[3]; // 颜色
