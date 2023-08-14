@@ -25,9 +25,13 @@ out float v_vert_index;         // 传给 geom 顶点索引
 #INSERT position_point_into_frame.glsl
 
 void main(){
-    // 将point转换到相机坐标系中
+    /*
+    将point和unit_normal转换到相机坐标系中
+
+    position_point_into_frame和rotate_point_into_frame两个函数区别在于
+    后者没有平移操作，当然向量也不需要平移操作
+    */
     bp = position_point_into_frame(point);
-    // 将unit_normal转换到相机坐标系中
     v_global_unit_normal = rotate_point_into_frame(unit_normal);
     v_color = color;
     v_vert_index = vert_index;
