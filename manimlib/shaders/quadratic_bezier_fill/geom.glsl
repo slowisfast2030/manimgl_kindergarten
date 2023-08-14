@@ -31,7 +31,7 @@ in vec3 v_global_unit_normal[3]; // 单位法向量
 in vec4 v_color[3]; // 颜色
 in float v_vert_index[3]; // 顶点索引
 
-out vec4 color; // 计算后的颜色
+out vec4 color; // 计算后的颜色（光照、阴影等）
 out float fill_all; // 是否填充
 out float uv_anti_alias_width; // uv坐标下的抗锯齿宽度
 
