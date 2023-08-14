@@ -140,12 +140,13 @@ void main(){
         (v_vert_index[2] - v_vert_index[1]) != 1.0
     );
 
-    // 图元顶点索引不连续
+    // 图元顶点索引不连续，三角形
     if(fill_all == 1.0){
         emit_simple_triangle();
         return;
     }
 
+    // 图元顶点索引连续，弓形
     vec3 new_bp[3];
     bezier_degree = get_reduced_control_points(vec3[3](bp[0], bp[1], bp[2]), new_bp);
     vec3 local_unit_normal = get_unit_normal(new_bp);
