@@ -67,5 +67,9 @@ void main() {
     if (color.a == 0) discard;
     frag_color = color;
     if (fill_all == 1.0) return;
+    /*
+    sdf(): uv空间下的当前像素点uv_coords到贝塞尔曲线的距离
+    uv_anti_alias_width: uv空间下的抗锯齿宽度
+    */
     frag_color.a *= smoothstep(1, 0, sdf() / uv_anti_alias_width);
 }
