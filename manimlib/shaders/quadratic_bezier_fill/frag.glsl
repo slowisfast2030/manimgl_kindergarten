@@ -35,7 +35,9 @@ float sdf(){
     // For flat-ish curves, take the curve
     else if(abs(v2 / u2) < 0.5 * uv_anti_alias_width){
         /*
-        
+        通过这个函数的调用，可以猜测出:
+        uv_coords: 当前像素点的uv坐标
+        uv_b2: 贝塞尔曲线的第三个控制点（前两个固定在(0,0)和(0,1)，所以曲线的形状完全由uv_b2决定）
         */
         return min_dist_to_curve(uv_coords, uv_b2, bezier_degree);
     }
