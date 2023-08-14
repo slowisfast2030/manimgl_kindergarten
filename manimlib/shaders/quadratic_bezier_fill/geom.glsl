@@ -125,6 +125,11 @@ void emit_pentagon(vec3[3] points, vec3 normal){
     */
     mat4 xyz_to_uv = get_xyz_to_uv(p0, p1, normal);
     uv_b2 = (xyz_to_uv * vec4(p2, 1)).xy;
+    /*
+    上述的正交变换会使得模长发生变化
+    length(p1 - p0) --> length((1,0) - (0,0)) == 1
+    所以，在相机坐标系下的anti_alias_width转换到uv坐标系下需要同比例缩放
+    */
     uv_anti_alias_width = anti_alias_width / length(p1 - p0);
 
     for(int i = 0; i < 5; i++){
