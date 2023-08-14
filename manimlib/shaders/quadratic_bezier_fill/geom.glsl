@@ -132,7 +132,7 @@ void main(){
     // If vert indices are sequential, don't fill all
     /*
     这里需要特别注意，传入几何着色器的是三角形图元
-    图元的顶点索引若是连续，则是弧形
+    图元的顶点索引若是连续，则是弓形
     不连续，则是三角形
     */
     fill_all = float(
