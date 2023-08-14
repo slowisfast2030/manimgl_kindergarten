@@ -4,6 +4,7 @@ float cross2d(vec2 v, vec2 w){
 }
 
 // 从 manim 坐标系变换映射到 uv 变换
+// 返回正交矩阵
 mat3 get_xy_to_uv(vec2 b0, vec2 b1){
     mat3 shift = mat3(
         1.0, 0.0, 0.0,
@@ -25,7 +26,7 @@ mat3 get_xy_to_uv(vec2 b0, vec2 b1){
 
 // Orthogonal matrix to convert to a uv space defined so that
 // b0 goes to [0, 0] and b1 goes to [1, 0]
-// 将正交矩阵转换为定义好的 uv 空间使 b0 变成 [0,0], b1 变成 [1,0]
+// 返回正交矩阵: 转换到 uv 空间，使 b0 变成 [0,0], b1 变成 [1,0]
 mat4 get_xyz_to_uv(vec3 b0, vec3 b1, vec3 unit_normal){
     mat4 shift = mat4(
         1, 0, 0, 0,
