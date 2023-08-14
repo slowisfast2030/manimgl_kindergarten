@@ -34,6 +34,9 @@ float sdf(){
     }
     // For flat-ish curves, take the curve
     else if(abs(v2 / u2) < 0.5 * uv_anti_alias_width){
+        /*
+        
+        */
         return min_dist_to_curve(uv_coords, uv_b2, bezier_degree);
     }
     // I know, I don't love this amount of arbitrary-seeming branching either,
