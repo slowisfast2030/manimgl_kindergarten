@@ -115,6 +115,9 @@ void emit_pentagon(vec3[3] points, vec3 normal){
         );
     }
 
+    /*
+    
+    */
     mat4 xyz_to_uv = get_xyz_to_uv(p0, p1, normal);
     uv_b2 = (xyz_to_uv * vec4(p2, 1)).xy;
     uv_anti_alias_width = anti_alias_width / length(p1 - p0);
