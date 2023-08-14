@@ -150,7 +150,9 @@ void main(){
     vec3 new_bp[3];
     // 三个点的空间位置有3种情况：重合、共线、共面
     bezier_degree = get_reduced_control_points(vec3[3](bp[0], bp[1], bp[2]), new_bp);
+    // 假设三点共面，计算单位法向量
     vec3 local_unit_normal = get_unit_normal(new_bp);
+    // 这个orientation的几何意义是什么？
     orientation = sign(dot(v_global_unit_normal[0], local_unit_normal));
 
     if(bezier_degree >= 1){
