@@ -40,6 +40,7 @@ out float orientation;
 
 // uv space is where b0 = (0, 0), b1 = (1, 0), and transform is orthogonal
 // 特别解释了uv空间
+// 正交变换的几何性质
 out vec2 uv_coords;
 out vec2 uv_b2;
 out float bezier_degree;
