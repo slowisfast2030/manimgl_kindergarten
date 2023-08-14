@@ -20,6 +20,11 @@ uniform float shadow;
 After the vertex shader stage in graphics programming, 
 triangulation refers to the process of converting polygons 
 with more than three indices into triangles. 
+
+前面说过，对于拥有24个控制点的circle来说，顶点着色器会输出24个顶点
+进入到几何着色器之前，这24个控制点会被分成8个三角形
+这里的layout (triangles) in;就是指的这个过程
+每一个几何着色器处理的是这8个三角形中的一个
 */
 in vec3 bp[3]; // 贝塞尔控制点
 in vec3 v_global_unit_normal[3]; // 单位法向量
