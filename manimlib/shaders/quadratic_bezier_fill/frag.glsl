@@ -8,7 +8,7 @@ in float uv_anti_alias_width;
 
 in vec3 xyz_coords;
 in float orientation;
-in vec2 uv_coords;
+in vec2 uv_coords; // 当前像素的uv坐标（插值得到）
 in vec2 uv_b2;
 in float bezier_degree;
 
