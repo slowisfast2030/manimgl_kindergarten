@@ -42,6 +42,7 @@ out float orientation;
 // 特别解释了uv空间
 // 这里的正交变换的几何性质: 
 // 角度不变，长度缩放比例length(p1 - p0) / length((1,0) - (0,0)) = length(p1 - p0)
+// 怎么就引入了uv坐标系呢？和裁剪空间有关系吗？
 out vec2 uv_coords;
 out vec2 uv_b2;
 out float bezier_degree;
