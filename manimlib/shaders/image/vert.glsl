@@ -15,6 +15,8 @@ cam_coords = vec3(0, 0, focal_distance);
 get_gl_Position
 position_point_into_frame
 函数中使用
+
+这些uniform变量定义在camera.py文件中的Camera类中
 */
 #INSERT camera_uniform_declarations.glsl
 
