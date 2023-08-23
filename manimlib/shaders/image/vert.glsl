@@ -55,3 +55,17 @@ void main(){
     */
     gl_Position = get_gl_Position(position_point_into_frame(point));
 }
+
+/*
+#version 330 core
+
+layout(location = 0) in vec3 inPosition; // Input vertex position in object space
+
+uniform mat4 modelViewProjection; // Combined model, view, and projection matrix
+
+void main()
+{
+    // Transform the vertex position to clip space
+    gl_Position = modelViewProjection * vec4(inPosition, 1.0);
+}
+*/
