@@ -123,7 +123,7 @@ void emit_pentagon(vec3[3] points, vec3 normal){
     通过正交变换，将相机坐标系下的点转换到uv坐标系下
     p0 --> (0,0)
     p1 --> (1,0)
-    xyz_to_uv: 相机坐标系到uv坐标系变换的正交矩阵
+    xyz_to_uv: 相机坐标系到uv坐标系变换的(近似)正交矩阵(模长会有一个固定的缩放比例)
     */
     mat4 xyz_to_uv = get_xyz_to_uv(p0, p1, normal);
     uv_b2 = (xyz_to_uv * vec4(p2, 1)).xy;
