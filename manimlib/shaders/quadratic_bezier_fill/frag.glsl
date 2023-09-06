@@ -8,6 +8,10 @@ in float uv_anti_alias_width;
 
 in vec3 xyz_coords;
 in float orientation;
+// 这里真是有点搞不懂
+// 按理说，uv_coords是当前像素的uv坐标，而且是插值得到的
+// uv_b2对于给定的几何着色器的某一个图元，应该是固定的(非插值)
+// bezier_degree就更明显了，只有0,1,2三种取值，不可能是插值的 
 in vec2 uv_coords; // 当前像素的uv坐标（插值得到）结合几何着色器的out进行理解
 in vec2 uv_b2;
 in float bezier_degree;
