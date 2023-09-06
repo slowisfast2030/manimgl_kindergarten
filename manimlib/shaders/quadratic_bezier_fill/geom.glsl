@@ -56,6 +56,11 @@ out float bezier_degree;
 
 
 void emit_vertex_wrapper(vec3 point, int index){
+    // 一个思考:因为几何着色器的处理对象是一个图元
+    // 那么这里的color就是图元每一个点的颜色
+    // 假设图元有3个点，这里的color是不是要申明为长度为3的数组呢？
+    // 实际上并不是
+    // 个人猜测，和EmitVertex()函数有关
     color = finalize_color(
         v_color[index],
         point,
@@ -137,6 +142,10 @@ void emit_pentagon(vec3[3] points, vec3 normal){
     for(int i = 0; i < 5; i++){
         vec3 corner = corners[i];
         // 每一次循环都会对uv_coords进行赋值，意义何在？是为了得到p2在uv坐标系下的坐标?
+        // 现在似乎可以回答这个问题
+        // 和color一样，因为图元有多个点，会对每一个点进行一次uv_coords的计算
+        // 个人猜测，由于emit_vertex_wrapper()函数中的EmitVertex()函数
+        // 每计算一个点的uv_coords和color都会被传入下一个阶段
         uv_coords = (xyz_to_uv * vec4(corner, 1)).xy;
         // 赋予了新的顶点索引
         int j = int(sign(i - 1) + 1);  // Maps i = [0, 1, 2, 3, 4] onto j = [0, 0, 1, 2, 2]

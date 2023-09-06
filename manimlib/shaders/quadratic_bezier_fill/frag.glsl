@@ -2,17 +2,38 @@
 
 #INSERT camera_uniform_declarations.glsl
 
+// 一个极其重要的猜测！！！
+// 几何着色器的输出是片段着色器的输入，有一些细节需要考虑
+// 因为几何着色器可以看到整个图元，比如完整的3个点
+// 那么几何着色器的输出可以分为两类
+// 第一类：以color和uv_coords为代表
+// 几何着色器会计算3个点的color和uv_coords，并传给片段着色器
+// 因为光栅化阶段拿到的3个color和uv_coords，那么就会自动自动插值
+// 得到每一个像素的color和uv_coords
+// 第二类：以uv_b2和bezier_degree为代表
+// 对于图元中的每个点，这三个值是一样的
+// 所以不论插值与否, 传到片段着色器的时候, 同一个图元内部的
+// uv_b2和bezier_degree值是一样的
+// 从这种角度来看，上面的两类似乎又统一了
+// 举个例子：假设几何着色器输出了3个点
+// p1(color1, uv_coords1, uv_b2, bezier_degree)
+// p2(color2, uv_coords2, uv_b2, bezier_degree)
+// p3(color3, uv_coords3, uv_b2, bezier_degree)
+// 这个图元被光栅化器处理后，会对图元内的每一个像素进行插值
+// color和uv_coords会随着像素位置变化而变化
+// uv_b2和bezier_degree不随像素位置变化而变化
+
+// vertex shader --> geometry shader --> rasterizer --> fragment shader
+// 顶点着色器只能看到每个点, 片段着色器只能看到每个像素
+// 几何着色器和光栅化器都能看到整个图元
 in vec4 color;
 in float fill_all;  // Either 0 or 1
 in float uv_anti_alias_width;
 
 in vec3 xyz_coords;
 in float orientation;
-// 这里真是有点搞不懂
-// 按理说，uv_coords是当前像素的uv坐标，而且是插值得到的
-// uv_b2对于给定的几何着色器的某一个图元，应该是固定的(非插值)
-// bezier_degree就更明显了，只有0,1,2三种取值，不可能是插值的 
-in vec2 uv_coords; // 当前像素的uv坐标（插值得到）结合几何着色器的out进行理解
+
+in vec2 uv_coords; 
 in vec2 uv_b2;
 in float bezier_degree;
 
