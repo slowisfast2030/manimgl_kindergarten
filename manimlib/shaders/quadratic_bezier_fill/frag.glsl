@@ -26,6 +26,7 @@
 // vertex shader --> geometry shader --> rasterizer --> fragment shader
 // 顶点着色器只能看到每个点, 片段着色器只能看到每个像素
 // 几何着色器和光栅化器都能看到整个图元
+
 in vec4 color;
 in float fill_all;  // Either 0 or 1
 in float uv_anti_alias_width;
